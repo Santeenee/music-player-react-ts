@@ -1,8 +1,13 @@
-export default function Sidebar() {
+import classNames from 'classnames'
+
+export default function Sidebar({ isOpen }: { isOpen: boolean }) {
 	return (
 		<aside
 			id="aside-pazzo"
-			className="metti-la-classe-di-prima transition-transform fixed h-screen w-[15rem] bg-red-100 right-0 bottom-0 top-0 p-4 pt-10 flex flex-col"
+			className={classNames(
+				isOpen && 'translate-x-[110%]',
+				'metti-la-classe-di-prima transition-transform fixed h-screen w-[15rem] bg-red-100 right-0 bottom-0 top-0 p-4 pt-10 flex flex-col'
+			)}
 		>
 			<ul>
 				<li>a</li>
