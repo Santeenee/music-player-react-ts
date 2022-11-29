@@ -8,7 +8,7 @@ export default function App() {
 
 	return (
 		<div className="App min-h-screen">
-			<Header onClick={() => setIsSidebarOpen(!isSidebarOpen)} />
+			<Header onClick={() => setIsSidebarOpen(open => !open)} />
 			<Player />
 			<Sidebar isOpen={isSidebarOpen} />
 			{/* no footer, 

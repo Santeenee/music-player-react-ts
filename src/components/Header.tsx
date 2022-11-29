@@ -1,4 +1,4 @@
-export default function Header({ onClick }: { onClick: any }) {
+export default function Header({ onClick }: { onClick: () => void }) {
 	return (
 		<header className="h-10 flex flex-row flex-nowrap items-center justify-between px-4 py-3">
 			<h1 className="font-bold text-2xl">Music player</h1>
