@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)"
+   sodipodi:docname="music-player-icon.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="491.4674"
+     inkscape:cy="308.23812"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1051"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     showguides="false">
+    <sodipodi:guide
+       position="-180.13966,160.15801"
+       orientation="1,0"
+       id="guide867" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <ellipse
+       style="fill:#00aaff;fill-opacity:1;stroke:none;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path853"
+       cx="59.579315"
+       cy="244.4657"
+       rx="59.044773"
+       ry="52.203461" />
+    <path
+       style="mix-blend-mode:normal;fill:#00aaff;fill-opacity:1;stroke:none;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       d="M 114.12698,237.01734 C 108.40365,228.31588 97.046637,220.35733 84.474697,216.23817 81.216475,215.17063 79.66819,214.33016 79.66819,213.62899 79.66819,213.06011 76.788957,166.47971 73.269898,110.11703 69.750841,53.754327 66.871605,6.3922563 66.871605,4.867967 V 2.0965321 L 73.208254,1.6744122 C 76.99143,1.4223943 82.986008,1.6141615 88.084276,2.1502999 120.20074,5.5276772 155.31461,21.692071 189.39909,48.789753 198.64331,56.139059 209.83672,65.862153 209.48133,66.234089 209.34019,66.381828 204.61991,63.9048 198.99187,60.729582 155.27769,36.067027 101.59644,24.32479 94.32332,44.537093 88.589977,60.470283 94.441963,89.595913 93.935368,90.939009 93.789136,91.326693 93.326748,82.61208 101.40107,138.21242 109.47542,193.81275 124.0397,257.00659 115.94821,239.44362 115.90375,239.34711 115.05524,238.4286 114.12698,237.01734 Z"
+       id="path875"
+       sodipodi:nodetypes="csssscsssssssssc" />
+  </g>
+</svg>
