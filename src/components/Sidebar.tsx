@@ -17,7 +17,7 @@ export default function Sidebar({
 			id="aside-pazzo"
 			className={classNames(
 				!isOpen && 'translate-x-[110%]',
-				'transition-transform fixed h-screen w-80 shadow-[0_0_0_3px_orangered] dark:shadow-[none] bg-white dark:bg-red-900 right-0 bottom-0 top-0 p-4 pt-10 flex flex-col overflow-y-auto'
+				'transition-transform fixed h-screen w-80 shadow-[0_0_0_3px_orangered] dark:shadow-[none] bg-white dark:bg-red-900 right-0 bottom-0 top-0 p-4 pt-14 flex flex-col overflow-y-auto'
 			)}
 		>
 			<ul className="grid gap-[1rem]">
@@ -27,7 +27,10 @@ export default function Sidebar({
 						index: number
 					) => (
 						<li key={index.toString()}>
-							<button className="grid grid-cols-[5rem_1fr] grid-rows-[1fr_1fr] gap-[0.25rem_1rem] w-full">
+							<button
+								onClick={() => changeSong(index)}
+								className="grid grid-cols-[5rem_1fr] grid-rows-[1fr_1fr] gap-[0.25rem_0.85rem] w-full"
+							>
 								<img
 									className={classNames(
 										index === songId &&

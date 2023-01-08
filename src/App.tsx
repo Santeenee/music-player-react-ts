@@ -8,11 +8,8 @@ import Sidebar from './components/Sidebar'
 import musicArr from './assets/music/musicList.json'
 
 export default function App() {
-	const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false) //state lifted up
+	const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false)
 	const [songId, setSongId] = useState<number>(0)
-
-	//what happens when songId changes?
-	//useEffect(() => {}, [songId])
 
 	return (
 		<div className="App min-h-screen">
