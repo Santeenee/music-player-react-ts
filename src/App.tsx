@@ -17,10 +17,10 @@ export default function App() {
 				isOpen={isSidebarOpen}
 				toggleSideBar={() => setIsSidebarOpen(open => !open)}
 			/>
-			<Player songId={songId} changeSong={setSongId} musicList={musicArr} />
+			<Player songId={songId} setSongId={setSongId} musicList={musicArr} />
 			<Sidebar
 				songId={songId}
-				changeSong={setSongId}
+				setSongId={setSongId}
 				musicList={musicArr}
 				isOpen={isSidebarOpen}
 			/>

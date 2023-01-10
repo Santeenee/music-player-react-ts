@@ -4,11 +4,11 @@ import MusicControls from './MusicControls'
 export default function Player({
 	musicList,
 	songId,
-	changeSong,
+	setSongId,
 }: {
 	musicList: { [key: string]: any }
 	songId: number
-	changeSong: Dispatch<SetStateAction<number>>
+	setSongId: Dispatch<SetStateAction<number>>
 }) {
 	return (
 		<main className="overflow-y-auto player p-6 flex flex-col flex-nowrap items-center justify-center max-w-fit mx-auto h-[calc(100vh_-_3.5rem)]">
@@ -33,7 +33,7 @@ export default function Player({
 
 			<MusicControls
 				songId={songId}
-				changeSong={changeSong}
+				setSongId={setSongId}
 				musicList={musicList}
 			/>
 		</main>

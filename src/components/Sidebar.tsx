@@ -5,12 +5,12 @@ export default function Sidebar({
 	isOpen,
 	songId,
 	musicList,
-	changeSong,
+	setSongId,
 }: {
 	isOpen: boolean
 	songId: number
 	musicList: { [key: string]: any }
-	changeSong: Dispatch<SetStateAction<number>>
+	setSongId: Dispatch<SetStateAction<number>>
 }) {
 	return (
 		<aside
@@ -28,7 +28,7 @@ export default function Sidebar({
 					) => (
 						<li key={index.toString()}>
 							<button
-								onClick={() => changeSong(index)}
+								onClick={() => setSongId(index)}
 								className="grid grid-cols-[5rem_1fr] grid-rows-[1fr_1fr] gap-[0.25rem_0.85rem] w-full"
 							>
 								<img

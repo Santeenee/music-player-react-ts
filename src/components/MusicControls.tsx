@@ -1,24 +1,25 @@
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react'
+import ProgressBar from './ProgressBar'
 
 export default function MusicControls({
 	songId,
-	changeSong,
+	setSongId,
 	musicList,
 }: {
 	musicList: { [key: string]: any }
 	songId: number
-	changeSong: Dispatch<SetStateAction<number>>
+	setSongId: Dispatch<SetStateAction<number>>
 }) {
 	const [playing, setPlaying] = useState<boolean>(false)
 
 	const audio = useRef(new Audio(musicList[songId].audioSrc))
 
-	function goToPreviousSong() {
+	function priorSong(): number {
 		const listLength: number = musicList.length
 		return songId === 0 ? (songId = listLength - 1) : --songId
 	}
 
-	function goToNextSong() {
+	function skipSong(): number {
 		const listLength: number = musicList.length
 		return songId === listLength - 1 ? (songId = 0) : ++songId
 	}
@@ -38,44 +39,32 @@ export default function MusicControls({
 		return new Date(~~seconds * 1000).toISOString().substring(14, 19)
 	}
 
-	//!doesn't work
-	function readableTimeEverySec(seconds: number) {
-		setInterval(() => {
-			//* from ss.xxxxxx to mm:ss
-			return new Date(~~seconds * 1000).toISOString().substring(14, 19)
-		}, 1000)
-		return ''
-	}
-
 	useEffect(() => {
+		//when switching between songs:
 		audio.current.pause()
-
 		audio.current = new Audio(musicList[songId].audioSrc)
+
 		if (playing) {
 			audio.current.play()
 		}
 	}, [songId])
 
 	return (
-		<div className="controls-container mt-10">
-			<div className="flex flex-row flex-nowrap gap-3 items-center justify-center mb-2">
-				<div className="time-played w-10">
-					{playing
-						? readableTimeEverySec(audio.current.currentTime)
-						: readableTime(audio.current.currentTime)}
-				</div>
-				<div className="progress-bar-container h-2 basis-40 w-[10rem] bg-white rounded-full overflow-hidden">
-					<div className="progress-bar bg-[orangered] w-0"></div>
-				</div>
-				<div className="time-not-played w-10">
-					{readableTime(audio.current.duration)}
-				</div>
-			</div>
+		<div className="controls-container mt-10 min-w-[70dvw]">
+			<ProgressBar
+				audio={audio}
+				playing={playing}
+				skipSong={skipSong}
+				setSongId={setSongId}
+				musicList={musicList}
+				songId={songId}
+			/>
 
-			<div className="controls flex flex-nowrap justify-between items-center dark:invert">
+			{/* BUTTONS */}
+			<div className="controls flex flex-nowrap justify-around items-center dark:invert">
 				{/* PREVIOUS */}
 				<button
-					onClick={() => changeSong(goToPreviousSong())}
+					onClick={() => setSongId(priorSong())}
 					className="p-1 hover:shadow rounded-full aspect-square"
 				>
 					<img
@@ -99,7 +88,7 @@ export default function MusicControls({
 
 				{/* NEXT */}
 				<button
-					onClick={() => changeSong(goToNextSong())}
+					onClick={() => setSongId(skipSong())}
 					className="p-1 hover:shadow rounded-full aspect-square"
 				>
 					<img

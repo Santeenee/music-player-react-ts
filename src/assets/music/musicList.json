@@ -3,21 +3,18 @@
 		"name": "Early Rise",
 		"author": "illiterate, Mr Slipz",
 		"thumbnail": "https://chillhop.com/wp-content/uploads/2022/09/8c2eab8525ace609b0c68b7564eb085d2244ee09-1024x1024.jpg",
-		"audioSrc": "/src/assets/music/Early-rise.mp3",
-		"duration": "2:45"
+		"audioSrc": "/src/assets/music/Early-rise.mp3"
 	},
 	{
 		"name": "Joy Boy",
 		"author": "less.people",
 		"thumbnail": "https://chillhop.com/wp-content/uploads/2022/10/41619d032f80a089e2c99e98953d441fd061ef12-1024x1024.jpg",
-		"audioSrc": "/src/assets/music/Joy-boy.mp3",
-		"duration": "3:02"
+		"audioSrc": "/src/assets/music/Joy-boy.mp3"
 	},
 	{
 		"name": "The Loveliest Dream",
 		"author": "Sofasound",
 		"thumbnail": "https://chillhop.com/wp-content/uploads/2022/10/8b7ba4cdad98f47e0411cfe94c50cce4a68cb848-1024x1024.jpg",
-		"audioSrc": "https://mp3.chillhop.com/serve.php/?mp3=45155",
-		"duration": "2:31"
+		"audioSrc": "https://mp3.chillhop.com/serve.php/?mp3=45155"
 	}
 ]
