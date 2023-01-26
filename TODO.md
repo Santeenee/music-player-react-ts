@@ -14,7 +14,8 @@
 #### fixes and other stuff to add/change
 
 - progress bar works... KINDA o(≧ 口 ≦)o
-  - [ ] switch to pure input:range
+  - [x] switch to pure input:range (MUCH BETTER!!! way less bugs, sacrifices on styling, but can be fixed later)
+- [ ] deploy
 - [ ] doesn't work on mobile ??????
 - [ ] about in sidebar?
 - [ ] keyboard controls (ArrowLeft, ArrowRight)

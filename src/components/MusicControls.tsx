@@ -34,13 +34,8 @@ export default function MusicControls({
 		return () => !playing
 	}
 
-	function readableTime(seconds: number) {
-		//* from ss.xxxxxx to mm:ss
-		return new Date(~~seconds * 1000).toISOString().substring(14, 19)
-	}
-
+	//when switching between songs:
 	useEffect(() => {
-		//when switching between songs:
 		audio.current.pause()
 		audio.current = new Audio(musicList[songId].audioSrc)
 
