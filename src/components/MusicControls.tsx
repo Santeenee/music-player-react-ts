@@ -51,7 +51,6 @@ export default function MusicControls({
 				playing={playing}
 				skipSong={skipSong}
 				setSongId={setSongId}
-				musicList={musicList}
 				songId={songId}
 			/>
 

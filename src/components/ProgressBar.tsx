@@ -11,7 +11,6 @@ export default function ProgressBar({
 	playing: boolean
 	skipSong: () => number
 	setSongId: Dispatch<SetStateAction<number>>
-	musicList: { [key: string]: any }
 	songId: number
 }) {
 	const [currTime, setCurrTime] = useState<number>(
@@ -60,7 +59,7 @@ export default function ProgressBar({
 					audio.current.currentTime = e.target?.value
 					setCurrTime(audio.current.currentTime)
 				}}
-				className="basis-60 grow w-[10rem] accent-orange-800 dark:accent-orange-700 rounded-full mt-[2px]"
+				className="basis-60 grow w-[10rem] accent-orange-800 dark:accent-orange-600 rounded-full mt-[2px]"
 				type="range"
 				// defaultValue={currTime || 0}
 				value={currTime || 0}
