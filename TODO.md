@@ -23,3 +23,4 @@
 - [x] fix skewmorphism (weird looking buttons)
 - [x] from PlayPause svg in button, to 'play' if not playing and 'pause' if is playing
 - [ ] remove 'open/close sidebar', use a svg || htmlelements instead
+- [ ] box-shadow does not follow border-radius in iOS browsers... o((>ω< ))o
