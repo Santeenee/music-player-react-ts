@@ -20,6 +20,6 @@
 - [ ] doesn't work on mobile ??????
 - [ ] about in sidebar?
 - [ ] keyboard controls (ArrowLeft, ArrowRight)
-- [ ] fix skewmorphism (weird looking buttons)
+- [x] fix skewmorphism (weird looking buttons)
 - [x] from PlayPause svg in button, to 'play' if not playing and 'pause' if is playing
 - [ ] remove 'open/close sidebar', use a svg || htmlelements instead
