@@ -15,7 +15,8 @@
 
 - progress bar works... KINDA o(≧ 口 ≦)o
   - [x] switch to pure input:range (MUCH BETTER!!! way less bugs, sacrifices on styling, but can be fixed later)
-- [x] deploy
+  - [ ] find a input:range that is browser independent and that does not create headaches
+- [x] deploy thanks to Vercel
 - [ ] doesn't work on mobile ??????
 - [ ] about in sidebar?
 - [ ] keyboard controls (ArrowLeft, ArrowRight)
