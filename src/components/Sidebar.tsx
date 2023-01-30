@@ -26,7 +26,7 @@ export default function Sidebar({
 						item: { thumbnail: string; name: string; author: string },
 						index: number
 					) => (
-						<li key={index.toString()}>
+						<li key={index.toString()} className="hover:brightness-125">
 							<button
 								onClick={() => setSongId(index)}
 								className="grid grid-cols-[5rem_1fr] grid-rows-[1fr_1fr] gap-[0.25rem_0.85rem] w-full"

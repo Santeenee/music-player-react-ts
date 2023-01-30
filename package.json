@@ -5,8 +5,9 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
-		"watch-tl": "pnpm exec tailwindcss -i ./src/assets/input.css -o ./dist/assets/build.css --watch",
-		"build": "pnpm exec tailwindcss -i ./src/assets/input.css -o ./dist/assets/build.css && tsc && vite build",
+		"watch-tl": "pnpm exec tailwindcss -i ./public/assets/input.css -o ./dist/assets/build.css --watch",
+		"build-tl": "pnpm exec tailwindcss -i ./public/assets/input.css -o ./dist/assets/build.css --minify",
+		"build": "pnpm build-tl && tsc && vite build",
 		"preview": "vite preview",
 		"both": "pnpm build && pnpm preview"
 	},

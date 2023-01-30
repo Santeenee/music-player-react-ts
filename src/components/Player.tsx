@@ -13,7 +13,7 @@ export default function Player({
 	return (
 		<main className="overflow-y-auto player p-6 flex flex-col flex-nowrap items-center justify-center max-w-fit mx-auto h-[calc(100vh_-_3.5rem)]">
 			{/* Thumbnail */}
-			<div className="thumbnail-song rounded-[0.4rem] outline-black dark:outline-[orangered] outline outline-2 outline-offset-4 overflow-hidden w-[10rem] aspect-square bg-gray-700">
+			<div className="rounded-[0.4rem] outline-black dark:outline-[orangered] outline outline-2 outline-offset-4 overflow-hidden w-[10rem] aspect-square bg-gray-700">
 				<img
 					className="w-full block"
 					src={musicList[songId].thumbnail}

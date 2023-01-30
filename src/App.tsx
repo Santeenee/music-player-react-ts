@@ -5,7 +5,7 @@ import Player from './components/Player'
 import Sidebar from './components/Sidebar'
 
 //import data
-import musicArr from './assets/music/musicList.json'
+import musicArr from '../src/assets/music/musicList.json'
 
 export default function App() {
 	const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false)

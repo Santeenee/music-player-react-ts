@@ -55,38 +55,52 @@ export default function MusicControls({
 			/>
 
 			{/* BUTTONS */}
-			<div className="controls flex flex-nowrap justify-around items-center dark:invert">
-				{/* PREVIOUS */}
+			<div className="controls flex flex-nowrap justify-around items-center">
+				{
+					// * PREVIOUS
+				}
 				<button
 					onClick={() => setSongId(priorSong())}
-					className="p-1 hover:shadow rounded-full aspect-square"
+					className="p-1 rounded-full aspect-square hover:invert-[0.2]"
 				>
 					<img
-						className="w-10 m-0"
+						className="w-10 m-0 dark:invert"
 						src="../assets/skip_previous.svg"
 						alt="Go to previous song"
 					/>
 				</button>
 
-				{/* PLAY / PAUSE */}
+				{
+					// * PLAY / PAUSE
+				}
 				<button
 					onClick={() => setPlaying(playPause())}
-					className="p-1 box-content shadow rounded-full transition-transform hover:scale-110 hover:transition-transform active:shadow-sm"
+					className="p-2 rounded-full bg-orange-700 transition-transform hover:scale-110"
 				>
-					<img
-						className="w-16 "
-						src="../assets/play-pause.svg"
-						alt="play/pause current song"
-					/>
+					{playing ? (
+						<img
+							className="w-11 invert"
+							src="../assets/pause.svg"
+							alt="pause current song"
+						/>
+					) : (
+						<img
+							className="w-11 invert"
+							src="../assets/play.svg"
+							alt="play current song"
+						/>
+					)}
 				</button>
 
-				{/* NEXT */}
+				{
+					//* NEXT
+				}
 				<button
 					onClick={() => setSongId(skipSong())}
-					className="p-1 hover:shadow rounded-full aspect-square"
+					className="p-1 rounded-full aspect-square hover:invert-[0.2]"
 				>
 					<img
-						className="w-10"
+						className="w-10 dark:invert"
 						src="../assets/skip_next.svg"
 						alt="Go to next song"
 					/>

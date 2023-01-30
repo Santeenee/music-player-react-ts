@@ -21,5 +21,5 @@
 - [ ] about in sidebar?
 - [ ] keyboard controls (ArrowLeft, ArrowRight)
 - [ ] fix skewmorphism (weird looking buttons)
-- [ ] from PlayPause svg in button, to 'play' if not playing and 'pause' if is playing
+- [x] from PlayPause svg in button, to 'play' if not playing and 'pause' if is playing
 - [ ] remove 'open/close sidebar', use a svg || htmlelements instead
