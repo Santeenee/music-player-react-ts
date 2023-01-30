@@ -10,7 +10,7 @@ export default function Header({
 			<div className="flex flex-row gap-2">
 				<img
 					className="w-5 block"
-					src="/src/assets/music-player-icon.svg"
+					src="../assets/music-player-icon.svg"
 					alt="Music player icon"
 				/>
 				<h1 className="font-bold text-2xl">Music player</h1>

@@ -63,7 +63,7 @@ export default function MusicControls({
 				>
 					<img
 						className="w-10 m-0"
-						src="/src/assets/skip_previous.svg"
+						src="../assets/skip_previous.svg"
 						alt="Go to previous song"
 					/>
 				</button>
@@ -75,7 +75,7 @@ export default function MusicControls({
 				>
 					<img
 						className="w-16 "
-						src="/src/assets/play_pause.svg"
+						src="../assets/play-pause.svg"
 						alt="play/pause current song"
 					/>
 				</button>
@@ -87,7 +87,7 @@ export default function MusicControls({
 				>
 					<img
 						className="w-10"
-						src="/src/assets/skip_next.svg"
+						src="../assets/skip_next.svg"
 						alt="Go to next song"
 					/>
 				</button>
