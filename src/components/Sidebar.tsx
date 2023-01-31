@@ -33,8 +33,7 @@ export default function Sidebar({
 							>
 								<img
 									className={classNames(
-										index === songId &&
-											'outline outline-2 outline-offset-[2.5px] outline-black dark:outline-white',
+										index === songId && 'ring ring-orange-700 dark:ring-white',
 										'col-[1/2] row-[1/3] rounded'
 									)}
 									src={item.thumbnail}

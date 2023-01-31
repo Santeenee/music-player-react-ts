@@ -45,7 +45,7 @@ export default function MusicControls({
 	}, [songId])
 
 	return (
-		<div className="controls-container mt-10 min-w-[70dvw]">
+		<div className="controls-container mt-10 w-full sm:w-[70dvw]">
 			<ProgressBar
 				audio={audio}
 				playing={playing}
