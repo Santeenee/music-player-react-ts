@@ -24,3 +24,4 @@
 - [x] from PlayPause svg in button, to 'play' if not playing and 'pause' if is playing
 - [ ] remove 'open/close sidebar', use a svg || htmlelements instead
 - [ ] box-shadow does not follow border-radius in iOS browsers... o((>ω< ))o
+- [ ] progress bar is tiny on mobile, make it   W I D E R
