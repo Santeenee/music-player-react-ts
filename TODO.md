@@ -21,8 +21,11 @@
 - [ ] keyboard controls (ArrowLeft, ArrowRight)
 - [x] fix skewmorphism (weird looking buttons)
 - [x] from PlayPause svg in button, to 'play' if not playing and 'pause' if is playing
-- [ ] remove 'open/close sidebar', use a svg || htmlelements instead
+- [x] remove 'open/close sidebar', use a svg || htmlelements instead
+  - [ ] animate it?
 - [x] outline does not follow border-radius in iOS browsers... o((>ω< ))o
   - [x] change it to box shadow ring using Tailwind
 - [x] progress bar is tiny on mobile, make it W I D E R
+- [ ] viewport 4 units seems not to work in iOS 16... rly??
+
 - [ ] despaghettify

@@ -18,9 +18,17 @@ export default function Header({
 			<button
 				onClick={toggleSideBar}
 				id="hamburger-menu-button"
-				className="z-10 p-1"
+				className="z-10 p-1 mt-1 w-12"
 			>
-				{!isOpen ? 'Open Sidebar' : 'Close Sidebar'}
+				{!isOpen ? (<img
+					className="dark:invert"
+					src="../assets/hamburger-menu.svg"
+					alt="Open menu"
+				/>) : (<img
+					className="dark:invert"
+					src="../assets/close.svg"
+					alt="Close menu"
+				/>)}
 			</button>
 		</header>
 	)

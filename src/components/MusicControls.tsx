@@ -55,7 +55,7 @@ export default function MusicControls({
 			/>
 
 			{/* BUTTONS */}
-			<div className="controls flex flex-nowrap justify-around items-center">
+			<div className="flex flex-nowrap justify-around items-center">
 				{
 					// * PREVIOUS
 				}
