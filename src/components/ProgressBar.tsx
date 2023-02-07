@@ -6,17 +6,17 @@ export default function ProgressBar({
 	skipSong,
 	setSongId,
 	songId,
+	currTime,
+	setCurrTime
 }: {
 	audio: any
 	playing: boolean
 	skipSong: () => number
 	setSongId: Dispatch<SetStateAction<number>>
 	songId: number
+	currTime: number
+	setCurrTime: Dispatch<SetStateAction<number>>
 }) {
-	const [currTime, setCurrTime] = useState<number>(
-		audio.current.currentTime || 0
-	)
-
 	function readableTime(seconds: number) {
 		//* from sss.xxxxxx to mm:ss
 		const intSeconds: number = !isNaN(Math.round(seconds))
@@ -43,12 +43,7 @@ export default function ProgressBar({
 			clearInterval(everySecondInterval)
 		}
 		return () => clearInterval(everySecondInterval)
-	}, [playing, currTime])
-
-	// when switching songs, set current time to 0
-	useEffect(() => {
-		setCurrTime(0)
-	}, [songId])
+	}, [playing, currTime]) //should 'playing' be in the dependency array?
 
 	return (
 		<div className="flex flex-row flex-nowrap gap-3 items-center justify-center mb-4">
@@ -56,8 +51,8 @@ export default function ProgressBar({
 
 			<input
 				onChange={(e: any) => {
-					audio.current.currentTime = e.target?.value
-					setCurrTime(audio.current.currentTime)
+					audio.current.currentTime = e.target?.value || 0
+					setCurrTime(e.target?.value || 0)
 				}}
 				className="basis-60 grow w-[10rem] accent-orange-800 dark:accent-orange-600 rounded-full mt-[2px]"
 				type="range"

@@ -27,7 +27,6 @@
   - [x] change it to box shadow ring using Tailwind
 - [x] progress bar is tiny on mobile, make it W I D E R
 - [ ] viewport 4 units seems not to work in iOS 16... rly??
-- [ ] when song has currTime !== 0 && priorSong() is called, return to the start of the song
-      rn, it goes to the previous song
+- [x] when song has currTime > 4s and priorSong() is called, return to the start of the song
 
 - [ ] despaghettify

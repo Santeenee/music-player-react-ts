@@ -12,7 +12,7 @@ export default function App() {
 	const [songId, setSongId] = useState<number>(0)
 
 	return (
-		<div className="App min-h-screen min-h-[100dvh]">
+		<div className="App height-full">
 			<Header
 				isOpen={isSidebarOpen}
 				toggleSideBar={() => setIsSidebarOpen(open => !open)}

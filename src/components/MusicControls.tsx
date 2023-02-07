@@ -10,12 +10,23 @@ export default function MusicControls({
 	songId: number
 	setSongId: Dispatch<SetStateAction<number>>
 }) {
-	const [playing, setPlaying] = useState<boolean>(false)
-
 	const audio = useRef(new Audio(musicList[songId].audioSrc))
+
+	const [playing, setPlaying] = useState<boolean>(false)
+	const [currTime, setCurrTime] = useState<number>(
+		audio.current.currentTime || 0
+	)
 
 	function priorSong(): number {
 		const listLength: number = musicList.length
+
+		// if seconds are 4 or more, return to song start instead of going to the previous song
+		if (currTime > 4) {
+			setCurrTime(0)
+			audio.current.currentTime = 0
+			return songId
+		}
+
 		return songId === 0 ? (songId = listLength - 1) : --songId
 	}
 
@@ -39,6 +50,9 @@ export default function MusicControls({
 		audio.current.pause()
 		audio.current = new Audio(musicList[songId].audioSrc)
 
+		// when switching songs, set current time to 0
+		setCurrTime(0)
+
 		if (playing) {
 			audio.current.play()
 		}
@@ -47,11 +61,13 @@ export default function MusicControls({
 	return (
 		<div className="controls-container mt-10 w-full sm:w-[70vw]">
 			<ProgressBar
+				songId={songId}
 				audio={audio}
 				playing={playing}
+				currTime={currTime}
+				setCurrTime={setCurrTime}
 				skipSong={skipSong}
 				setSongId={setSongId}
-				songId={songId}
 			/>
 
 			{/* BUTTONS */}
