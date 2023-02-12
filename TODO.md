@@ -28,5 +28,6 @@
 - [x] progress bar is tiny on mobile, make it W I D E R
 - [ ] viewport 4 units seems not to work in iOS 16... rly??
 - [x] when song has currTime > 4s and priorSong() is called, return to the start of the song
+- [x] avoid duplicated musicList.json
 
-- [ ] despaghettify
+- [x] despaghettify

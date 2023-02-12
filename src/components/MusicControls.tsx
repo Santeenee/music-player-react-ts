@@ -1,127 +1,148 @@
-import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react'
-import ProgressBar from './ProgressBar'
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
+import ProgressBar from "./ProgressBar";
 
 export default function MusicControls({
-	songId,
-	setSongId,
-	musicList,
+  songId,
+  setSongId,
+  musicList,
 }: {
-	musicList: { [key: string]: any }
-	songId: number
-	setSongId: Dispatch<SetStateAction<number>>
+  musicList: { [key: string]: any };
+  songId: number;
+  setSongId: Dispatch<SetStateAction<number>>;
 }) {
-	const audio = useRef(new Audio(musicList[songId].audioSrc))
+  const audio = useRef(new Audio(musicList[songId].audioSrc));
 
-	const [playing, setPlaying] = useState<boolean>(false)
-	const [currTime, setCurrTime] = useState<number>(
-		audio.current.currentTime || 0
-	)
+  const [playing, setPlaying] = useState<boolean>(false);
+  const [currTime, setCurrTime] = useState<number>(
+    audio.current.currentTime || 0
+  );
 
-	function priorSong(): number {
-		const listLength: number = musicList.length
+  // must return a number for setSongId
+  function priorSong(): number {
+    // if seconds are 4 or more, return to song start instead of going to the previous song
+    if (currTime > 4) {
+      //! setCurrTime should update audio.current.currentTime too
+      //! idk how, but it should do it
+      setCurrTime(0);
+      audio.current.currentTime = 0;
 
-		// if seconds are 4 or more, return to song start instead of going to the previous song
-		if (currTime > 4) {
-			setCurrTime(0)
-			audio.current.currentTime = 0
-			return songId
-		}
+      return musicList[songId].audioSrc.startsWith("https://")
+        ? songId
+        : priorSong();
+    }
 
-		return songId === 0 ? (songId = listLength - 1) : --songId
-	}
+    if (songId === 0) {
+      songId = musicList.length - 1;
+    } else {
+      --songId;
+    }
+    if (musicList[songId].audioSrc.startsWith("https://")) {
+      return songId;
+    }
+    return priorSong();
+  }
 
-	function skipSong(): number {
-		const listLength: number = musicList.length
-		return songId === listLength - 1 ? (songId = 0) : ++songId
-	}
+  // must return a number for setSongId
+  function skipSong(): number {
+    if (songId === musicList.length - 1) {
+      songId = 0;
+    } else {
+      ++songId;
+    }
 
-	function playPause() {
-		if (audio.current.paused) {
-			audio.current.play()
-		} else {
-			audio.current.pause()
-		}
+    if (musicList[songId].audioSrc.startsWith("https://")) {
+      return songId;
+    } else {
+      return skipSong();
+    }
+  }
 
-		return () => !playing
-	}
+  function playPause() {
+    if (audio.current.paused) {
+      audio.current.play();
+    } else {
+      audio.current.pause();
+    }
 
-	//when switching between songs:
-	useEffect(() => {
-		audio.current.pause()
-		audio.current = new Audio(musicList[songId].audioSrc)
+    return () => !playing;
+  }
 
-		// when switching songs, set current time to 0
-		setCurrTime(0)
+  useEffect(() => {
+    audio.current.pause();
+    audio.current = new Audio(musicList[songId].audioSrc);
 
-		if (playing) {
-			audio.current.play()
-		}
-	}, [songId])
+    // when switching songs, set current time to 0
+    setCurrTime(0);
 
-	return (
-		<div className="controls-container mt-10 w-full sm:w-[70vw]">
-			<ProgressBar
-				songId={songId}
-				audio={audio}
-				playing={playing}
-				currTime={currTime}
-				setCurrTime={setCurrTime}
-				skipSong={skipSong}
-				setSongId={setSongId}
-			/>
+    if (playing) {
+      audio.current.play();
+    }
+  }, [songId]);
 
-			{/* BUTTONS */}
-			<div className="flex flex-nowrap justify-around items-center">
-				{
-					// * PREVIOUS
-				}
-				<button
-					onClick={() => setSongId(priorSong())}
-					className="p-1 rounded-full aspect-square hover:invert-[0.2]"
-				>
-					<img
-						className="w-10 m-0 dark:invert"
-						src="../assets/skip_previous.svg"
-						alt="Go to previous song"
-					/>
-				</button>
+  return (
+    <div className="controls-container mt-10 w-full sm:w-[70vw]">
+      <ProgressBar
+        songId={songId}
+        audio={audio}
+        playing={playing}
+        currTime={currTime}
+        setCurrTime={setCurrTime}
+        skipSong={skipSong}
+        setSongId={setSongId}
+      />
 
-				{
-					// * PLAY / PAUSE
-				}
-				<button
-					onClick={() => setPlaying(playPause())}
-					className="p-2 rounded-full bg-orange-700 transition-transform hover:scale-110"
-				>
-					{playing ? (
-						<img
-							className="w-11 invert"
-							src="../assets/pause.svg"
-							alt="pause current song"
-						/>
-					) : (
-						<img
-							className="w-11 invert"
-							src="../assets/play.svg"
-							alt="play current song"
-						/>
-					)}
-				</button>
+      {/* BUTTONS */}
+      <div className="flex flex-nowrap items-center justify-around">
+        {
+          // * PREVIOUS
+        }
+        <button
+          onClick={() => setSongId(priorSong())}
+          className="aspect-square rounded-full p-1 hover:invert-[0.2]"
+        >
+          <img
+            className="m-0 w-10 dark:invert"
+            src="../assets/skip_previous.svg"
+            alt="Go to previous song"
+          />
+        </button>
 
-				{
-					//* NEXT
-				}
-				<button
-					onClick={() => setSongId(skipSong())}
-					className="p-1 rounded-full aspect-square hover:invert-[0.2]"
-				>
-					<img
-						className="w-10 dark:invert"
-						src="../assets/skip_next.svg"
-						alt="Go to next song"
-					/>
-				</button>
-			</div>
-		</div>
-	)
+        {
+          // * PLAY / PAUSE
+        }
+        <button
+          onClick={() => setPlaying(playPause())}
+          className="rounded-full bg-orange-700 p-2 transition-transform hover:scale-110"
+        >
+          {playing ? (
+            <img
+              className="w-11 invert"
+              src="../assets/pause.svg"
+              alt="pause current song"
+            />
+          ) : (
+            <img
+              className="w-11 invert"
+              src="../assets/play.svg"
+              alt="play current song"
+            />
+          )}
+        </button>
+
+        {
+          //* NEXT
+        }
+        <button
+          onClick={() => setSongId(skipSong())}
+          className="aspect-square rounded-full p-1 hover:invert-[0.2]"
+        >
+          <img
+            className="w-10 dark:invert"
+            src="../assets/skip_next.svg"
+            alt="Go to next song"
+          />
+        </button>
+      </div>
+    </div>
+  );
 }
