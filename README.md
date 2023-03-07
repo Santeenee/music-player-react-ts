@@ -8,7 +8,7 @@ You can use this project by simply
 - `git clone https://github.com/santeenee/music-player-react-ts`
 - consider using `pnpm` over `npm`
 - `pnpm i` to restore dependencies
-- `pnpm watch-tl` to watch for changes on the tailwindcss side
+- `pnpm watch-tl` to watch for changes on the tailwindcss side. (Keep this process running in a separated terminal while the 'pnpm dev' one is running)
 - `pnpm dev` to serve the project locally on port 5173
 - other commands in package.json
 
