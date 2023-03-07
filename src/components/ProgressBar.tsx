@@ -1,10 +1,4 @@
-import {
-  Dispatch,
-  MutableRefObject,
-  SetStateAction,
-  useEffect,
-  useMemo,
-} from "react";
+import { Dispatch, MutableRefObject, SetStateAction, useEffect } from "react";
 
 export default function ProgressBar({
   audio,
